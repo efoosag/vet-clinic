@@ -7,7 +7,7 @@
 Create database - vet_clinic
 Create table animals with the following columns id, name, date_of_birth, escape_attempts. neutered and wight_ks.
 Inserted 4 entries (4 different animals)
-Query the database to retrieve information based on differents criteria:
+Query the database to retrieve information based on differents criteria.
 
 ## Authors
 
