@@ -41,3 +41,21 @@ SETVAL('animals_id_seq', (select max(id) from animals), false);
  CONSTRAINT fk_an FOREIGN KEY(animals_id) REFERENCES animals(id), 
  CONSTRAINT fk_ve FOREIGN KEY(vets_id) REFERENCES vets(id));
 
+ -- Database Performance (EXPLAIN ANALYZE)
+
+ -- Add an email column to your owners table
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+ALTER TABLE visits RENAME COLUMN animals_id TO animal_id;
+
+ALTER TABLE visits RENAME COLUMN vets_id TO vet_id;
+
+-- Create Index on animal_id column of visits table.
+CREATE INDEX animal_id_idx ON visits(animal_id asc);
+
+-- Create Index on vet_id column of visits table.
+CREATE INDEX  vet_id_idx ON visits(vet_id asc);
+
+-- Create Index  owners_email on email column of owners table.
+CREATE INDEX  owner_email_idx  ON owners(email);
+
